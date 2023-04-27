@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+
+@import "abstracts/mixin";
+@import "abstracts/variables";
+@import "abstracts/reset";
+
+
+@import "common/layout";
+@import "common/admin_layout";
+@import "common/items";
+@import "common/icon";
+@import "common/table";
+@import "common/modifier";
+@import "common/chart"; 
+
+
+@import "pages/general";
+@import "pages/admin"; 
+@import "pages/process";
+
+
+.test{
+    width: 100px/2;
+}

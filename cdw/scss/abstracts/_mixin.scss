@@ -1,0 +1,6 @@
+@use 'sass:math';
+$width: 300px;
+
+.element {
+  margin-top: math.div(-$width, 2);
+}

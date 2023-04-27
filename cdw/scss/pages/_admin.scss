@@ -1,0 +1,1063 @@
+// 일반페이지 사용될 것 같은 내용들만 정의
+
+.cdwAdmin {
+
+    // catalog_now
+    .flexBundle {
+        @include flex(flex, normal, center);
+    }
+
+    .defaultBtn {
+        border-color: #012978;
+        color: #012978;
+
+        // defaultBtn__disabled
+        &__disabled {
+            border-color: #d3d3d3;
+            background-color: #f4f4f4;
+            color: #b4b4b4;
+
+            &:hover {
+                box-shadow: none;
+            }
+        }
+    }
+
+    .common_round_btn {
+        .icon--create {
+            margin-top: 6px;
+            width: 18px;
+            height: 18px;
+
+            &::before {
+                content: '';
+                @include absolSp(12px, 15px, -44px, 0, $spDst, $spDstSize);
+            }
+        }
+
+        .icon_func_edit {
+            margin-top: 8px;
+            margin-right: 3px;
+            background-position: -484px -165px;
+        }
+
+        .icon_func_del {
+            margin-top: 6px;
+            margin-right: 3px;
+            background-position: -465px -165px;
+        }
+
+        &.defaultBtn__disabled,
+        &[disabled] {
+            .icon--create {
+                &::before {
+                    background-position: -29px 0;
+                }
+            }
+        }
+    }
+
+    .moreBundle {
+        position: relative;
+        z-index: 10;
+
+        .moreResultbox {
+            display: none;
+            position: absolute;
+            top: calc(100% + 6px);
+            right: 0;
+        }
+
+        // moreBundle--active
+        &--active {
+            .moreResultbox {
+                display: block;
+            }
+        }
+    }
+
+    .moreResultbox {
+
+        // moreResultbox__list
+        &__list {
+            background: #fff;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .16);
+        }
+
+        // moreResultbox__item
+        &__item {
+            white-space: nowrap;
+
+            .icon {
+                margin-right: 4px;
+            }
+
+            &:first-child {
+                border-radius: 5px 5px 0 0;
+            }
+
+            &:last-child {
+                border-radius: 0 0 5px 5px;
+            }
+
+            &:hover {
+                background-color: #eff4ff;
+
+                a {
+                    color: #012978;
+                }
+
+                .icon--addfolder {
+                    &:before {
+                        background-position: -178px 0;
+                    }
+                }
+
+                .icon--switch {
+                    &:before {
+                        background-position: -217px 0;
+                    }
+                }
+            }
+
+            a {
+                padding: 0 12px;
+                box-sizing: border-box;
+                height: 32px;
+                text-decoration: none;
+                font-size: 13px;
+                letter-spacing: -.65px;
+                color: #4a4a4a;
+                @include flex(flex, normal, center);
+            }
+        }
+
+        .icon--addfolder {
+            width: 18px;
+            height: 18px;
+
+            &::before {
+                content: '';
+                @include absolSp(15px, 13px, -159px, 0, $spDst, $spDstSize);
+            }
+        }
+
+        .icon--switch {
+            width: 18px;
+            height: 18px;
+
+            &::before {
+                content: '';
+                @include absolSp(14px, 15px, -198px, 0, $spDst, $spDstSize);
+            }
+        }
+    }
+
+    .tagBox {
+        display: flex;
+        margin: -2px;
+
+        .tagItem {
+            margin: 2px;
+        }
+    }
+
+    .tagItem {
+        display: inline-block;
+        position: relative;
+        vertical-align: top;
+        padding: 0 5px 0 15px;
+        height: 20px;
+        background: #edf0f5;
+        border-radius: 3px;
+        font-size: 11px;
+        font-weight: 900;
+        line-height: 21px;
+        letter-spacing: -.55px;
+        color: #21365f;
+        white-space: nowrap;
+
+        &::before {
+            content: '#';
+            position: absolute;
+            top: 0;
+            left: 5px;
+        }
+
+        // tagItem__del
+        &__del {
+            position: relative;
+            vertical-align: top;
+            width: 12px;
+            height: 100%;
+            border: 0;
+            background: none;
+
+            &::before {
+                content: '';
+                @include absolSp(7px, 7px, -15px, -43px, $spDst, $spDstSize);
+            }
+        }
+
+        // tagItem--edit
+        &--edit {
+            padding-left: 5px;
+
+            &::before {
+                display: none;
+            }
+
+            input[type="text"] {
+                border: 0;
+                background: none;
+                font-size: 11px;
+                font-weight: 900;
+                line-height: 21px;
+                letter-spacing: -.55px;
+                color: #21365f;
+            }
+        }
+    }
+
+
+    .catalogWrap {
+        display: flex;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        // catalogWrap__content
+        &__content {
+            flex: 1;
+            position: relative;
+            padding: 22px 20px 24px;
+            min-width: 0;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 8px 0 rgba(0, 0, 0, .06);
+
+            // catalogWrap__content--treeview
+            &--treeview {
+                flex: .6;
+
+                .treeview {
+                    height: calc(100% - 36px);
+                }
+            }
+
+            +.catalogWrap__content {
+                margin-left: 20px;
+            }
+
+            // catalogWrap__content--hasPrimary
+            &--hasPrimary {
+                padding-bottom: 85px;
+
+                .primaryBox {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    padding-bottom: 24px;
+
+                    .flexBundle {
+                        justify-content: center;
+
+                        .common_round_btn {
+                            +.common_round_btn {
+                                margin-left: 4px;
+                            }
+                        }
+                    }
+                }
+
+                .catalogWrap__scrollBox {
+                    max-height: 100%;
+                    overflow-y: auto;
+                }
+            }
+        }
+
+    }
+
+    .treeviewSearch {
+        margin-bottom: 6px;
+        @include flex(flex, normal, center);
+
+        .common_round_searchbox3 {
+            width: calc(100% - 22px);
+        }
+
+        // treeviewSearch__more
+        &__more {
+            margin-left: 2px;
+
+            .moreBtn {
+                width: 20px;
+                height: 20px;
+                border: 0;
+                background: none;
+
+                .icon--more {
+                    margin: 0;
+                    font-size: 9px;
+                    color: transparent;
+                    white-space: nowrap;
+                    overflow: hidden;
+
+                    &::before {
+                        content: '';
+                        @include absolSp(2px, 12px, -10px, -43px, $spDst, $spDstSize);
+                    }
+                }
+            }
+        }
+    }
+
+    .treeview {
+        padding: 8px 0;
+        height: 100%;
+        box-sizing: border-box;
+        border: 1px solid #d3d3d3;
+        border-radius: 4px;
+        overflow-y: auto;
+
+        // treeview__item
+        &__item {
+            position: relative;
+            padding-left: 12px;
+
+            .treeview__item {
+                padding-left: 18px;
+            }
+
+            // treeview__item--float
+            &--float {
+                position: absolute;
+                z-index: 2;
+                width: 100%;
+                background: #eff4ff;
+                box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .16);
+            }
+        }
+
+        // treeview__itemBtn
+        &__itemBtn {
+            display: inline-block;
+            vertical-align: top;
+            position: relative;
+            padding-left: 18px;
+            padding-right: 12px;
+            box-sizing: border-box;
+            //max-width: 100%;
+            border: 0;
+            background: none;
+            text-decoration: none;
+            text-align: left;
+            font-size: 13px;
+            line-height: 28px;
+            letter-spacing: -.65px;
+            color: #4a4a4a;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            &--hasDepth {
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 7px;
+                    left: 6px;
+                    @include spbg(6px, 10px, 0, -43px, $spDst, $spDstSize);
+                }
+            }
+
+            .icon {
+                margin-top: 4px;
+                width: 18px;
+                height: 18px;
+
+                // icon--folder
+                &--folder {
+                    &::before {
+                        content: '';
+                        @include absolSp(15px, 13px, -21px, -23px, $spDst, $spDstSize);
+                    }
+                }
+
+                // icon--table
+                &--table {
+                    &::before {
+                        content: '';
+                        @include absolSp(13px, 13px, -60px, -23px, $spDst, $spDstSize);
+                    }
+                }
+
+                // icon--column
+                &--column {
+                    &::before {
+                        content: '';
+                        @include absolSp(13px, 13px, -97px, -23px, $spDst, $spDstSize);
+                    }
+                }
+            }
+
+            .treeLabel {
+                display: inline-block;
+                vertical-align: top;
+                margin-top: 5px;
+                margin-left: 8px;
+                padding: 0 8px;
+                box-sizing: border-box;
+                height: 16px;
+                background: #eee;
+                border-radius: 3px;
+                font-size: 11px;
+                line-height: 17px;
+                font-weight: normal;
+                color: #fff;
+
+                // treeLabel--new
+                &--new {
+                    background-color: #83ce46;
+                }
+
+                // treeLabel--update
+                &--update {
+                    background-color: #31c2ff;
+                }
+            }
+
+            // treeview__itemBtn--selected
+            &--selected {
+                font-weight: 900;
+                color: #012978;
+
+                &.treeview__itemBtn--hasDepth {
+                    &::before {
+                        top: 8px;
+                        transform: rotate(90deg);
+                    }
+                }
+
+                .icon--folder {
+                    &::before {
+                        background-position: 0 -23px;
+                    }
+                }
+
+                .icon--table {
+                    &::before {
+                        background-position: -41px -23px;
+                    }
+                }
+
+                .icon--column {
+                    &::before {
+                        background-position: -78px -23px;
+                    }
+                }
+            }
+
+        }
+
+        // treeview__guideLine
+        &__guideLine {
+            position: relative;
+            margin: 6px auto;
+            width: calc(100% - 10px);
+            height: 1px;
+            background: #777;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                margin-top: -5px;
+                border-top: 5px solid transparent;
+                border-left: 5px solid #777;
+                border-bottom: 5px solid transparent;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 0;
+                margin-top: -5px;
+                border-top: 5px solid transparent;
+                border-right: 5px solid #777;
+                border-bottom: 5px solid transparent;
+            }
+        }
+
+        .treeviewNoti {
+            position: absolute;
+            top: 10px;
+            right: 11px;
+            z-index: 1;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+
+            // treeviewNoti--private
+            &--private {
+                background: #95a4b6;
+            }
+
+            // treeviewNoti--public
+            &--public {
+                background: #012978;
+            }
+        }
+
+        .treeviewDrag {
+            position: absolute;
+            top: 5px;
+            right: 11px;
+            z-index: 1;
+            width: 18px;
+            height: 18px;
+
+            .icon_drag {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -6px;
+                margin-left: -3px;
+                background-position: -347px -300px;
+            }
+        }
+
+        // treeview__btnWrap
+        &__btnWrap {
+            display: block;
+            position: relative;
+
+            &:hover {
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: -100vw;
+                    right: 0;
+                    background: #eff4ff;
+                }
+            }
+        }
+
+    }
+
+    .common_tbl_round {
+        .subDescText {
+            margin-left: 28px;
+        }
+    }
+
+    // dataset_state.scss
+
+    .chartRoundBox {
+        padding: 18px 20px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 6px 8px 0 rgba(0, 0, 0, .06);
+    }
+
+    .optSetBundle {
+        @include flex(flex, normal, center);
+
+        // optSetBundle__item
+        &__item {
+            @include flex(flex, normal, center);
+
+            +.optSetBundle__item {
+                margin-left: 20px;
+            }
+        }
+
+        // optSetBundle__title
+        &__title {
+            margin-right: 10px;
+            font-size: 14px;
+            letter-spacing: -.7px;
+            color: #4a4a4a;
+        }
+
+        // optSetBundle__setting
+        &__setting {
+            @include flex(flex, normal, center);
+
+            // optSetBundle__settingItem
+            &Item {
+                +.optSetBundle__settingItem {
+                    margin-left: 6px;
+                }
+            }
+        }
+    }
+
+    .chartIndex {
+
+        // chartIndex__list
+        &__list {
+            @include flex(flex, normal, center);
+        }
+
+        // chartIndex__item
+        &__item {
+            font-size: 10px;
+            letter-spacing: -.5px;
+            color: #4a4a4a;
+            @include flex(flex, normal, center);
+
+            +.chartIndex__item {
+                margin-left: 10px;
+            }
+        }
+
+        // chartIndex__icon
+        &__icon {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 3px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+
+            // chartIndex__icon--line
+            &--line {
+                margin-right: 6px;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 2px;
+                    left: -3px;
+                    width: 12px;
+                    height: 1px;
+                    background-color: inherit;
+                }
+            }
+        }
+    }
+
+    .layeroverItem {
+        position: absolute;
+        margin-bottom: 8px;
+        padding: 8px;
+        box-sizing: border-box;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 4px;
+        box-shadow: 0 5px 12px 0 rgba(0, 0, 0, .16);
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -3px;
+            border-top: 6px solid #fff;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+        }
+
+        .chartIndex {
+
+            // chartIndex__list
+            &__list {
+                flex-direction: column;
+            }
+
+            // chartIndex__item
+            &__item {
+                flex-direction: column;
+                margin-left: 0;
+                width: 100%;
+                font-size: 12px;
+                letter-spacing: normal;
+
+                +.chartIndex__item {
+                    margin-top: 6px;
+                }
+
+                .itemBundle {
+                    position: relative;
+                    width: 100%;
+
+                    // itemBundle--subList
+                    &--subList {
+                        margin-top: 4px;
+                        padding-left: 12px;
+                        box-sizing: border-box;
+                        font-size: 11px;
+                        letter-spacing: -.55px;
+                        color: #777;
+
+                        .chartIndex__tit {
+                            padding-left: 9px;
+                        }
+
+                        .chartIndex__icon {
+                            position: absolute;
+                            top: 2px;
+                            left: 0;
+                            width: 5px;
+                            height: 5px;
+                            border-left: 1px solid #999;
+                            border-bottom: 1px solid #999;
+                            border-radius: 0;
+                        }
+                    }
+
+                    .itemBundle {
+                        +.itemBundle {
+                            margin-top: 4px;
+                        }
+                    }
+                }
+            }
+
+            // chartIndex__tit
+            &__tit {
+                letter-spacing: -.6px;
+                @include flex(flex, normal, center);
+            }
+        }
+    }
+
+    // user_info
+
+    .userWrap {
+        display: flex;
+        // MEMO: 타이틀에 공통으로 여백을 줄지 고민해봐야 함.
+        margin-top: 20px;
+
+        @at-root {
+
+            //userWrap__content
+            &__content {
+                display: flex;
+                height: 80px;
+                padding: 0 20px;
+                background-color: #fff;
+                box-sizing: border-box;
+                align-items: center;
+                justify-content: center;
+                flex: 1;
+                border-radius: 12px;
+                box-shadow: 0 6px 8px 0 rgba(8, 25, 39, 0.06);
+
+                &--user {
+                    width: 407px;
+                    min-width: 407px;
+                    flex: 0;
+                    margin-right: 20px;
+                }
+            }
+
+            //userWrap__icon
+            &__icon {
+                display: inline-block;
+                width: 42px;
+                height: 42px;
+                min-width: 42px;
+                background: url(/imgs/dst/icon_user.png) no-repeat 0 0 / 42px 42px;
+                margin-right: 12px;
+            }
+
+            //userWrap__userInfo
+            &__userInfo {
+                min-width: 116px;
+                font-size: 14px;
+                font-weight: bold;
+                color: #777;
+                letter-spacing: -.7px;
+                margin-right: 36px;
+
+                @media screen and (min-width: 1400px) {
+                    margin-right: 10px;
+                }
+            }
+
+            //userWrap__btnSetting
+            &__btnSetting {
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                border: 0;
+                background: url(/imgs/dst/sp_dst_x2.png) no-repeat -36px -43px / 250px 500px;
+                vertical-align: top;
+                margin-top: 1px;
+                margin-left: 4px;
+                appearance: none;
+            }
+
+            //userWrap__userNumber
+            &__userNumber {
+                font-family: douzonetitle;
+                font-size: 22px;
+                font-weight: 900;
+                color: #222;
+
+                em {
+                    font-size: 16px;
+                    font-weight: bold;
+                    letter-spacing: -.8px;
+                    margin-left: 2px;
+                }
+            }
+        }
+    }
+
+    // 사용 용량 현황
+    .usageBox {
+        display: flex;
+        align-items: center;
+        flex: 1;
+
+        .percentBar {
+            overflow: hidden;
+            position: relative;
+            height: 13px;
+            margin: 0 10px;
+            background-color: #f2f2f2;
+            flex: 1;
+            border-radius: 6px;
+
+            .percent {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                box-shadow: 0 2px 3px 0 rgba(0, 128, 255, .22);
+                background-image: linear-gradient(to right, #0070f2, #6dd8d4);
+            }
+        }
+
+        //usageBox__percent
+        &__percent {
+            font-family: douzonetitle;
+            font-weight: 900;
+            font-size: 22px;
+            color: #1171f1;
+
+            em {
+                font-size: 16px;
+                font-weight: bold;
+                margin-left: 2px;
+                letter-spacing: -.8px;
+            }
+        }
+
+        //usageBox__data
+        &__data {
+            margin-right: 10px;
+            font-family: douzonetitle;
+
+            .dataUsage {
+                font-weight: 900;
+                font-size: 22px;
+                color: #222;
+            }
+
+            .slash {
+                margin: 0 2px;
+                font-size: 14px;
+                color: #c6c6c6;
+                letter-spacing: -.7px;
+            }
+
+            .dataMax {
+                font-size: 16px;
+                font-weight: bold;
+                color: #444;
+
+                em {
+                    margin-left: 2px;
+                    font-size: 14px;
+                }
+            }
+
+            .dataRemaining {
+                font-size: 13px;
+                font-weight: bold;
+                color: #939393;
+                letter-spacing: -.65px;
+            }
+        }
+    }
+
+    // version_history
+    .cdwAdmin__tableBox {
+        @at-root {
+            .fluidTable {
+                .fluidTableHeader {
+                    table {
+                        border-spacing: 0;
+                    }
+                }
+
+                .fluidTableBody {
+                    position: relative;
+                }
+
+                table {
+                    background-color: transparent;
+
+                    th {
+                        background-color: #e1e4eb;
+                        letter-spacing: -.65px;
+                        text-align: left;
+                        padding-left: 20px;
+                        padding-right: 20px;
+
+                        // @media screen and (max-width: 1680px) {
+                        //     padding-left: 20px;
+                        //     padding-right: 20px;
+                        // }
+                    }
+
+                    td {
+                        position: relative;
+                        background-color: #fff;
+                        text-align: left;
+                        padding-left: 20px;
+                        padding-right: 20px;
+
+                        // @media screen and (max-width: 1680px) {
+                        //     padding-left: 20px;
+                        //     padding-right: 20px;
+                        // }
+                    }
+                }
+            }
+        }
+
+        // 테이블 안에 markText 썻을 때 font-weight 수정
+        .markText {
+            font-weight: 900;
+        }
+    }
+
+    // cdwAdmin__supports
+    &__supports {
+        display: flex;
+        align-items: center;
+
+        dt {
+            font-size: 14px;
+            color: #4a4a4a;
+            letter-spacing: -.7px;
+            margin-right: 10px;
+        }
+
+        .dash {
+            margin: 0 4px;
+        }
+    }
+
+    // cdwAdmin__calendar
+    &__calendar {
+        display: flex;
+        align-items: center;
+    }
+
+    //
+    .divisionBox {
+        display: flex;
+        align-items: center;
+
+        dl {
+            &+dl {
+                margin-left: 20px;
+            }
+        }
+    }
+
+    // 커스텀 툴팁
+    .tooltipBox {
+        vertical-align: middle;
+        max-width: 100%;
+
+        .tooltipMsg {
+            display: none;
+            position: absolute;
+            left: 50%;
+            bottom: calc(100% - 15px);
+            width: 100%;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 11px;
+            color: #4a4a4a;
+            letter-spacing: -.55px;
+            text-align: center;
+            z-index: 1;
+            border-radius: 4px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+            word-break: break-all;
+            line-height: 15px;
+            margin-bottom: 4px;
+            transform: translateX(-50%);
+        }
+
+        p {
+            &:hover {
+                &+ {
+                    .tooltipMsg {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    // 로딩바
+    // cdwAdmin__empty
+    .isLoading {
+        position: absolute;
+        top: 6px;
+        left: 0;
+        right: 0;
+        bottom: 6px;
+        border-radius: 6px;
+        background-color: rgba(255, 255, 255, .5);
+    }
+
+    .LS_spinner2.cdwSize {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .LS_spinner2.cdwSize .loading {
+        width: 150px;
+        height: 150px;
+    }
+
+    .LS_spinner2.blue_type.cdwSize .loading {
+        border-top: 10px solid rgba(28, 144, 251, .2);
+        border-right: 10px solid rgba(28, 144, 251, .2);
+        border-bottom: 10px solid rgba(28, 144, 251, .2);
+        border-left: 10px solid #1c90fb;
+    }
+
+    .LS_spinner2.cdwSize .loading_text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: auto;
+        margin: 0;
+        font-size: 28px;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+}

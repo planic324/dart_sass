@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,target-densitydpi=medium-dpi">
+<title>CDW</title>
+<link rel="stylesheet" type="text/css" href="../../../common_index.css">
+<style>
+	/* section>section{padding-left:30px;} */
+	section>.sec_h,
+	section>ul{margin-left:30px;}
+	section.group>.sec_h{margin-left:30px;}
+	section.single>.sec_h,
+	section.single>ul{margin-left:0;}
+	.flex_box{display:flex;}
+	.flex_box:after{display:block;clear:both;content:'';}
+	.flex_box .col{flex:1 1 auto;width:100%;box-sizing:border-box;}
+	.flex_box .col+.col{margin-left:15px;}
+	footer{clear:both;}
+	.del{text-decoration:line-through}
+
+	/* Process */
+	.prog{float:left;width:44px;height:17px;margin:-1px 6px 0 0;padding:2px 2px 1px;background:#ccc;color:#fff;font-size:12px;font-weight:bold;text-align:center;}
+	.todo{background:#415c7a;}				/* 준비중 */
+	.inprogress{background:#1c90fb;}	/* 작업중 */
+	.done{background:#1fc47c;}				/* 완료 */
+	.new{background: red;} 					/* 신규 */
+
+	@media(max-width:768px){
+		.flex_box{flex-direction:column;}
+		.flex_box .col+.col{margin-left:0;}
+	}
+</style>
+</head>
+<body>
+
+<header role="banner">
+	<h1 class="hd_h1">CDW (Clinical Data Warehouse) <span class="codest">SCSS</span><span class="buildtype static">배포-static</span></h1>
+</header>
+<section class="group">
+	<section>
+		<h1 class="sec_h">일반 페이지</h1>
+		<ul>
+			<li><a href="cdw_layout.html">레이아웃 <span>/ cdw_layout.html</span></a></li>
+			<li><a href="cdw_element.html">공통요소 <span>/ cdw_element.html</span></a></li>
+			<li><a href="cdw_00.html"><span class="prog done">완료</span>MS.01_일반페이지_대시보드_데이터 현황 <span>/ cdw_00.html</span></a></li>
+			<li><a href="cdw_00_02.html"><span class="prog done">완료</span> MS.02_일반페이지_대시보드_MY대시보드 <span>/ cdw_00_02.html</span></a></li>
+			<li><a href="cdw_00_03.html"><span class="prog done">완료</span> ST.02_일반페이지_공통_통합검색 <span>/ cdw_00_03.html</span></a></li>
+			<li><a href="cdw_00_04.html"><span class="prog done">완료</span> FM.06_휴지통 <span>/ cdw_00_04.html</span></a></li>
+			<li><a href="cdw_01.html"><span class="prog done">완료</span> RD.01_일반 페이지_연구과제 상세보기 <span>/ cdw_01.html</span></a></li>
+			<li class="subitem"><a href="cdw_01_02.html"><span class="prog done">완료</span> RD.01_일반 페이지_연구과제 상세보기 (데이터셋 목록) <span>/ cdw_01_02.html</span></a></li>
+			<li><a href="cdw_02.html"><span class="prog done">완료</span> FM.01_1depth메뉴_MY워크스페이스 <span>/ cdw_02.html</span></a></li>
+			<li class="subitem"><a href="cdw_02_02.html"><span class="prog done">완료</span> 검색결과 화면 <span>/ cdw_02_02.html</span></a></li>
+			<li class="subitem"><a href="cdw_02_03.html"><span class="prog done">완료</span> 검색결과 화면_엠티셋 <span>/ cdw_02_03.html</span></a></li>
+			<li><a href="cdw_03.html"><span class="prog done">완료</span> DD.01_일반 페이지_데이터셋 상세보기 - 기본정보탭 - 사용등록완료 데이터셋 <span>/ cdw_03.html</span></a></li>
+			<li class="subitem"><a href="cdw_03_02.html"><span class="prog done">완료</span> DD.03_일반 페이지_데이터셋 상세보기 - 칼럼정보탭 <span>/ cdw_03_02.html</span></a></li>
+			<li class="subitem"><a href="cdw_03_03.html"><span class="prog done">완료</span> DD.03_일반 페이지_데이터셋 상세보기 - 칼럼정보탭 - 데이터 전체보기 화면(레이아웃) <span>/ cdw_03_03.html</span></a></li>
+			<li class="subitem"><a href="cdw_03_04.html"><span class="prog done">완료</span> DD.04_데이터셋 상세보기_가공정보_데이터셀렉터 <span>/ cdw_03_04.html</span></a></li>
+			<li class="subitem"><a href="cdw_03_04_02.html"><span class="prog done">완료</span> DD.04_데이터셋 상세보기_가공정보_코호트 디스커버리 <span>/ cdw_03_04_02.html</span></a></li>
+			<li class="subitem"><a href="cdw_03_05.html"><span class="prog done">완료</span> DD.06_일반 페이지_데이터셋 상세보기 - 기술통계탭 <span>/ cdw_03_05.html</span></a></li>
+			<li class="subitem"><a href="cdw_03_06.html"><span class="prog done">완료</span> DD.07_일반 페이지_데이터셋 상세보기 - 코멘트탭 <span>/ cdw_03_06.html</span></a></li>
+			<li class="subitem"><a href="cdw_03_07.html"><span class="prog done">완료</span> DD.08_일반 페이지_데이터셋 상세보기 - 히스토리탭 <span>/ cdw_03_07.html</span></a></li>
+		</ul>
+	</section>
+
+	<section>
+		<h1 class="sec_h">CDW 관리자</h1>
+		<ul>
+			<li><a href="cdw_admin_0.html">관리자 레이아웃 <span>/ cdw_admin_0.html</span></a></li>
+			<li><a href="cdw_admin_1.html">데이터 카탈로그 관리 / 현재 카탈로그 <span>/ cdw_admin_1.html</span></a></li>
+			<li class="subitem"><a href="cdw_admin_1e.html">데이터 카탈로그 관리 / 현재 카탈로그 empty <span>/ cdw_admin_1e.html</span></a></li>
+			<li><a href="cdw_admin_2.html">데이터 카탈로그 관리 / 버전 히스토리 <span>/ cdw_admin_2.html</span></a></li>
+			<li><a href="cdw_admin_3.html">서비스 사용 현황 <span>/ cdw_admin_3.html</span></a></li>
+			<li><a href="cdw_admin_4.html">서비스 사용 설정 <span>/ cdw_admin_4.html</span></a></li>
+			<li><a href="cdw_admin_5.html">활동 로그 조회 / 사용자 활동 로그 조회 <span>/ cdw_admin_5.html</span></a></li>
+			<li class="subitem"><a href="cdw_admin_5_2.html">활동 로그 조회 / 관리자 활동 로그 조회 <span>/ cdw_admin_5_2.html</span></a></li>
+			<li class="subitem"><a href="cdw_admin_5e.html">활동 로그 조회 / Empty <span>/ cdw_admin_5e.html</span></a></li>
+			<li><a href="cdw_admin_6.html">데이터셋 생성 현황 <span>/ cdw_admin_6.html</span></a></li>
+		</ul>
+	</section>
+
+	<section>
+		<h1 class="sec_h">가공 페이지</h1>
+		<ul>
+			<li><a href="cdw_process_00.html">리뉴얼 공통요소 정리 <span>/ cdw_process_00.html</span></a></li>
+			<li><a href="cdw_process_01.html">가공페이지_데이터 셀렉터 <span>/ cdw_process_01.html</span></a></li>
+			<li><a href="cdw_process_02.html">가공페이지_데이터 셀렉터(하단 팝업 - 기본정보) <span>/ cdw_process_02.html</span></a></li>
+			<li><a href="cdw_process_02_2.html">가공페이지_데이터 셀렉터(하단 팝업 - 칼럼정보) <span>/ cdw_process_02_2.html</span></a></li>
+			<li><a href="cdw_process_02_3.html">가공페이지_데이터 셀렉터(하단 팝업 - 데이터 정보) <span>/ cdw_process_02_3.html</span></a></li>
+			<li><a href="cdw_process_02_4.html">가공페이지_데이터 셀렉터(하단 팝업 - 세부 조건 정보) <span>/ cdw_process_02_4.html</span></a></li>
+			<li><a href="cdw_process_02_5.html">가공페이지_데이터 셀렉터(하단 팝업 - 로딩 중) <span>/ cdw_process_02_5.html</span></a></li>
+			<li><a href="cdw_process_03.html">가공페이지_코호트 디스커버리 <span>/ cdw_process_03.html</span></a></li>
+			<li><a href="cdw_process_03_2.html">가공페이지_코호트 디스커버리(초기화면 - 빈화면) <span>/ cdw_process_03_2.html</span></a></li>
+			<li><a href="cdw_process_03_3.html">가공페이지_코호트 디스커버리(하단 팝업 - 기본정보) <span>/ cdw_process_03_3.html</span></a></li>
+			<li><a href="cdw_process_03_4.html">가공페이지_코호트 디스커버리(하단 팝업 - 데이터 정보) <span>/ cdw_process_03_4.html</span></a></li>
+		</ul>
+	</section>
+
+	<section>
+		<h1 class="sec_h">팝업</h1>
+		<ul>
+			<li><a href="/html/dialog/dst_dialog_13.html">데이터셋 생성하기 <span>/ dst_dialog_13.html</span></a></li>
+			<li><a href="/html/dialog/dst_dialog_14.html">데이터셋 임시저장/위치설정/기준설정 <span>/ dst_dialog_14.html</span></a></li>
+			<li><a href="/html/dialog/dst_dialog_15.html">환자기본정보 데이터 테이블 칼럼 선택 <span>/ dst_dialog_15.html</span></a></li>
+			<li><a href="/html/dialog/dst_dialog_16.html">처방코드 조건 값 선택 <span>/ dst_dialog_16.html</span></a></li>
+			<li><a href="/html/dialog/dst_dialog_17.html">가공페이지_아트보드(Join_조건컬럼그룹설정) <span>/ dst_dialog_17.html</span></a></li>
+			<li><a href="/html/dialog/dst_dialog_17_2.html">가공페이지_아트보드(Join_조건컬럼그룹) <span>/ dst_dialog_17_2.html</span></a></li>
+			<li><a href="/html/dialog/dst_dialog_18.html">가공페이지_아트보드(Filter) <span>/ dst_dialog_18.html</span></a></li>
+			<li><a href="/html/dialog/dst_dialog_19.html">가공페이지_아트보드(Group by_조건컬럼그룹설정) <span>/ dst_dialog_19.html</span></a></li>
+			<li><a href="/html/dialog/dst_dialog_20.html">가공페이지_기본 데이터 테이블 조건 설정하기 <span>/ dst_dialog_20.html</span></a></li>
+			<li><a href="/html/dialog/cdw_dialog_00.html">데이터셋 정보 수정하기 / 연구과제 생성하기<span>/ cdw_dialog_00.html</span></a></li>
+			<li><a href="/html/dialog/cdw_dialog_01.html">데이터셋 공유설정 <span>/ cdw_dialog_01.html</span></a></li>
+			<li><a href="/html/dialog/cdw_dialog_02.html">조직도 보기 <span>/ cdw_dialog_02.html</span></a></li>
+			<li><a href="/html/dialog/cdw_dialog_03.html">데이터셋 간단 사용 등록/결재 사용 등록 <span>/ cdw_dialog_03.html</span></a></li>
+			<li><a href="/html/dialog/cdw_dialog_04.html">데이터셋 사용 등록 해제 / 데이터셋 가공 방법 선택<span>/ cdw_dialog_04.html</span></a></li>
+			<li><a href="/html/dialog/cdw_dialog_05.html">데이터 카탈로그 관리 변경 내역 확인<span>/ cdw_dialog_05.html</span></a></li>
+		</ul>
+	</section>
+
+</section>
+
+
+<footer role="contentinfo">
+
+</footer>
+<script src="//code.jquery.com/jquery-latest.min.js"></script>
+<script src="../../../common_index.js"></script>
+</body>
+</html>

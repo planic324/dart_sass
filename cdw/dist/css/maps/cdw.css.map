@@ -1,0 +1,1 @@
+{"version":3,"sources":["abstracts/_mixin.scss"],"names":[],"mappings":"AAGA;EACE","file":"../cdw.css","sourcesContent":["@use 'sass:math';\n$width: 300px;\n\n.element {\n  margin-top: math.div(-$width, 2);\n}"]}

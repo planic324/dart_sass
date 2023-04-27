@@ -1,0 +1,164 @@
+// 일반페이지 사용될 것 같은 내용들만 정의
+
+.cdw {
+    @at-root {
+        &__public {
+            .availableService {
+                // availableService__item
+                li {
+                    position: relative;
+                    padding: 14px 0;
+                    box-sizing: border-box;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: -15px;
+                        right: -15px;
+                        height: 1px;
+                        background: #d7dbe2;
+                    }
+                    &:first-of-type {
+                        &::before {
+                            content: none;
+                        }
+                    }
+                    &:last-of-type {
+                        padding-bottom: 10px;
+                    }
+                }
+                &__item {
+                    text-decoration: none;
+                    @include flex(flex, normal, center);
+                }
+                .serviceBi {
+                    margin-right: 10px;
+                }
+                // serviceInfo__heading
+                .serviceInfo {
+                    &__heading {
+                        font-size: 13px;
+                        font-weight: 900;
+                        color: #4a4a4a;
+                        &::after {
+                            content: '';
+                            display: inline-block;
+                            margin: 3px 0 0 6px;
+                            vertical-align: top;
+                            @include spbg(5px, 9px, -77px, -67px);
+                        }
+                    }
+                    &__exp {
+                        margin-top: 4px;
+                        font-size: 12px;
+                        font-weight: bold;
+                        color: #777;
+                        letter-spacing: -.6px;
+                    }
+                }
+                .availableBundle {
+                    display: inline-block;
+                }
+                //available__btnFold
+                .available {
+                    &__btnFold {
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        font-size: 13px;
+                        font-weight: bold;
+                        color: #777;
+                        letter-spacing: -.65px;
+                        transform: translateY(-50%);
+                        .icon_arrow05 {
+                            margin-top: 5px;
+                            transform: rotate(180deg);
+                        }
+                        &--active {
+                            .icon_arrow05 {
+                                transform: rotate(0);
+                            }
+                        }
+                        &:hover {
+                            color: #4a4a4a;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            .moveBtnLink {
+                font-size: 13px;
+                font-weight: bold;
+                color: #777;
+                letter-spacing: -.65px;
+                text-decoration: none;
+            }
+
+            // 가공페이지 커스텀
+            .cdw_renewal {
+                .workflow_area {
+                    .data_info_area {
+                        position: relative;
+                        top: auto;
+                        left: auto;
+                        right: auto;
+                        bottom: auto;
+                    }
+                }
+            }
+
+            // 가공페이지를 사용하기 위한 구조 생성
+            .contentProcess {
+                display: none;
+                overflow: auto;
+                position: relative;
+                height: 416px;
+                border-radius: 14px;
+                box-shadow: 0 2px 10px 0 rgba(0,0,0,.1);
+                .workflow_area {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: #fff;
+                }
+            }
+
+            // TODO: 가공페이지를 사용하기 위한 생성을 하였으나 적합한지 다시 추후 확인 필요함.
+            .contentShare {
+                .workflow_area {
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                    right: auto;
+                    bottom: auto;
+                    .data_info_area {
+                        position: relative;
+                        top: auto;
+                        left: auto;
+                        right: auto;
+                        bottom: auto;
+                        .data_content_box {
+                            position: relative;
+                            top: auto;
+                            left: auto;
+                            right: auto;
+                            bottom: auto;
+                            padding: 0;
+                            min-height: 270px;
+                            .empty_area {
+                                margin-top: 0;
+                                transform: translateY(-50%);
+                            }
+                        }
+                    }
+                }
+                .content_title_box {
+                    margin-bottom: 12px;
+                }
+            }
+        }
+    }
+}

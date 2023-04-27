@@ -1,0 +1,125 @@
+<div class="workspaceBox">
+    <div class="workspaceNew">
+        <!-- [D] 버튼 클릭시 class="workspaceNew--selected" 추가해주세요. -->
+        <button type="button" class="workspaceNew__btnNew iconBox--plus">새로 만들기</button>
+        <!--  -->
+        <ul class="workspaceLayer">
+            <li>
+                <button type="button" class="workspaceLayer__item"><i class="workspaceLayer__icon workspaceLayer__icon--research"></i>연구과제</button>
+            </li>
+            <li>
+                <button type="button" class="workspaceLayer__item"><i class="workspaceLayer__icon workspaceLayer__icon--dataset"></i>데이터셋</button>
+            </li>
+        </ul>
+    </div>
+    <div class="workspaceListBox">
+        <ul class="workspaceList">
+            <li>
+                <button type="button" class="workspaceList__item">
+                    <span class="workspaceList__icon workspaceList__icon--dashboard"></span>
+                    <span class="workspaceList__heading">대시보드</span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="workspaceList__item">
+                    <span class="workspaceList__icon workspaceList__icon--workspace"></span>
+                    <span class="workspaceList__heading">MY 워크스페이스</span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="workspaceList__item">
+                    <span class="workspaceList__icon workspaceList__icon--shareWorkspace"></span>
+                    <span class="workspaceList__heading">공유 워크스페이스</span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="workspaceList__item">
+                    <span class="workspaceList__icon workspaceList__icon--dataset"></span>
+                    <span class="workspaceList__heading">등록 데이터셋</span>
+                </button>
+            </li>
+        </ul>
+        <ul class="workspaceList workspaceList--dropdown">
+            <!-- [D] 버튼 클릭 시 class="selected" 추가해주세요. -->
+            <li class="selected">
+                <!-- 링크와 드롭다운 영역이 분리될 떄 class="workspaceList__item--typeLink" 추가해주세요. -->
+                <span class="workspaceList__item">
+                    <a href="#" class="workspaceList__link">
+                        <span class="workspaceList__icon workspaceList__icon--important"></span>
+                        <span class="workspaceList__heading">중요 연구과제</span>
+                    </a>
+                    <button type="button" class="workspaceList__iconDrop"></button>
+                </span>
+                <ul class="workspaceDepth">
+                    <!-- [D] 기획 내용은 최대 다섯개만 노출된다고 합니다. -->
+                    <li>
+                        <button type="button" class="workspaceDepth__item">드롭다운예시입니다드롭다운예시입니다드롭다운예시입니다드롭다운예시입니다</button>
+                    </li>
+                    <li>
+                        <button type="button" class="workspaceDepth__item">abcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefg</button>
+                    </li>
+                    <li>
+                        <button type="button" class="workspaceDepth__item">123123123213123123123213213213123213123123213213213213123123</button>
+                    </li>
+                    <li>
+                        <button type="button" class="workspaceDepth__item">연구과제명연구과제명연구과제명연구과제명연구과제명연구과제명</button>
+                    </li>
+                    <li>
+                        <button type="button" class="workspaceDepth__item">연구과제명연구과제명연구과제명연구과제명연구과제명연구과제명</button>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span class="workspaceList__item">
+                    <a href="#" class="workspaceList__link">
+                        <span class="workspaceList__icon workspaceList__icon--importantSet"></span>
+                        <span class="workspaceList__heading">중요 데이터셋</span>
+                    </a>
+                    <button type="button" class="workspaceList__iconDrop"></button>
+                </span>
+                <ul class="workspaceDepth">
+                    <!-- [D] 기획 내용은 최대 다섯개만 노출된다고 합니다. -->
+                    <li>
+                        <button type="button" class="workspaceDepth__item">연구과제명연구과제명연구과제명연구과제명연구과제명연구과제명</button>
+                    </li>
+                    <li>
+                        <button type="button" class="workspaceDepth__item">연구과제명연구과제명연구과제명연구과제명연구과제명연구과제명</button>
+                    </li>
+                    <li>
+                        <button type="button" class="workspaceDepth__item">연구과제명연구과제명연구과제명연구과제명연구과제명연구과제명</button>
+                    </li>
+                    <li>
+                        <button type="button" class="workspaceDepth__item">연구과제명연구과제명연구과제명연구과제명연구과제명연구과제명</button>
+                    </li>
+                    <li>
+                        <button type="button" class="workspaceDepth__item">연구과제명연구과제명연구과제명연구과제명연구과제명연구과제명</button>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="workspaceList">
+            <li>
+                <button type="button" class="workspaceList__item">
+                    <span class="workspaceList__icon workspaceList__icon--catalog"></span>
+                    <span class="workspaceList__heading">데이터 카탈로그</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="workspaceBottomBox">
+    <ul class="workspaceList">
+        <li>
+            <button type="button" class="workspaceList__item">
+                <span class="workspaceList__icon workspaceList__icon--delete"></span>
+                <span class="workspaceList__heading">휴지통</span>
+            </button>
+        </li>
+        <li>
+            <button type="button" class="workspaceList__item">
+                <span class="workspaceList__icon workspaceList__icon--setting"></span>
+                <span class="workspaceList__heading">CDW 관리자 페이지</span>
+            </button>
+        </li>
+    </ul>
+</div>
