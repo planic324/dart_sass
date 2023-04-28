@@ -1,0 +1,6 @@
+$width: 300px;
+
+.element {
+  margin-top: math.div(-$width, 2);
+  padding-top: 10px;
+}
