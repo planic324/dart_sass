@@ -1,4 +1,22 @@
-.element {
-  margin-top: -150px;
+.content {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.basic_text {
+  display: block;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #4a4a4a;
+}
+.basic_text:hover {
+  color: #b5b5b5;
+  background-color: #4a4a4a;
 }
 /*# sourceMappingURL=maps/cdw.css.map */

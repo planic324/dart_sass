@@ -1,1 +1,21 @@
-@use 'sass:math';
+$sp_dst2x_url: "/imgs/dst/sp_dst_x2.png";
+$sp_dst2x_size: 250px 500px;
+
+@mixin spcdw($spWidth : 0, $spHeight : 0, $posX : 0, $posY : 0, $url : $sp_dst2x_url){
+  display: inline-block;
+  vertical-align: top;
+  width: $spWidth;
+  height: $spHeight;
+  background: url($url) $posX $posY no-repeat;
+  background-size: $sp_dst2x_size;
+  line-height: 100em;
+  color: transparent;
+  overflow: hidden;
+}
+
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+

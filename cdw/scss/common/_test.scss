@@ -1,6 +1,25 @@
-$width: 300px;
+@use 'sass:math';
+@use 'sass:color';
+@use 'abstracts/mixin';
+@use 'abstracts/variables' as *;
 
-.element {
-  margin-top: math.div(-$width, 2);
-  padding-top: 10px;
+.content{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 30px;
+    box-sizing: border-box;
+}
+.basic_text{
+    display: block;
+    font-size: 20px;
+    line-height: 1.2;
+    color: #4a4a4a;
+    &:hover{
+        color: invert(#4a4a4a);
+        background-color: $basic__text--color;
+    }
 }
